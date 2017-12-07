@@ -1,0 +1,23 @@
+//适配主流设备
+//设置基准值
+//假设是750px的设计稿 100px的基准值
+
+//adapter var 
+//设计稿宽度
+@psdWidth:750;
+//基准值
+@baseSize:100;
+//需要适配的设备
+@deviceWidthArr:320px,360px,275px,384px,400px,414px,424px,480px,540px,640px,720px,750px;
+
+//@index指的是数组的序号
+.adapterFuc(@index) when (@index<=length(@deviceWidthArr)){
+	@media (min-width: extract(@deviceWidthArr,@index)) {
+ 		html{
+ 			font-size: extract(@deviceWidthArr,@index)/@psdWidth*@baseSize;
+ 		}
+ 	}
+ 	//自调用
+ 	.adapterFuc(@index+1);
+}
+.adapterFuc(1);
