@@ -1,2 +1,2 @@
 # fakeSuNing
-Online preview :[click me](http://miot.github.io/fakeSuNing/index.html)
+Online preview :[click me](http://miot.github.io/fakeMobileSuNing/index.html)
