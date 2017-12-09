@@ -26,97 +26,162 @@ body{
 }
 //model css
 	//主体容器
-		.sn_layout{
-			width: 100%;
-			max-width: 750px;
-			min-width: 320px;
-			margin:0 auto;
-		}
+	.sn_layout{
+		width: 100%;
+		max-width: 750px;
+		min-width: 320px;
+		margin:0 auto;
+		padding-bottom: 90/@bs;
+	}
 	//顶部搜索
-		.sn_search{
-			width: 100%;
-			height: 90rem/@baseSize;
-			background-color: #fabc09;
-			position: fixed;
-			z-index: 99;
-			a{
-				width: 90/@bs;
-				height: 90/@bs;
-				position: absolute;
-				top:0;
-				&.icon_category{
-					left:0;
-					background: url("../images/icon_category.png") no-repeat center;
-					background-size: 44/@bs 70/@bs;
-				}
-				&.icon_gift{
-					right:0;
-					background: url("../images/icon_gift.png") no-repeat center;
-					background-size: 45/@bs 55/@bs;
-				}
+	.sn_search{
+		width: 100%;
+		height: 90rem/@baseSize;
+		background-color: #fabc09;
+		position: fixed;
+		left:0;
+		top:0;
+		z-index: 99;
+		a{
+			width: 90/@bs;
+			height: 90/@bs;
+			position: absolute;
+			top:0;
+			&.icon_category{
+				left:0;
+				background: url("../images/icon_category.png") no-repeat center;
+				background-size: 44/@bs 70/@bs;
 			}
-			form{
-				width: 100%;
-				padding: 0 90/@bs;
-				.icon_search{
-					width:30/@bs;
-					height: 30/@bs;
-					position: absolute;
-					left:100/@bs;
-					top:30/@bs;
-					background: url("../images/icon_search.png") no-repeat center;
-					background-size: 27/@bs 28/@bs;
-				}
-				input{
-					width: 100%;
-					height: 60/@bs;
-					margin-top: 15/@bs;
-					border:none;
-					background: rgba(255,255,255,0.6);
-					border-radius: 8/@bs;
-					font-size: 24/@bs;
-					outline: none;
-					padding-left: 50/@bs;
-				}
+			&.icon_gift{
+				right:0;
+				background: url("../images/icon_gift.png") no-repeat center;
+				background-size: 45/@bs 55/@bs;
 			}
 		}
-	//轮播图
-		.sn_banner{
+		form{
 			width: 100%;
-			overflow: hidden;
-			position: relative;
-			ul{
-				list-style: none;
-				&:first-child{
-					width: 10*100%;
-					li{
-						width: 100%/10;
-						float: left;
-						a{
+			padding: 0 90/@bs;
+			.icon_search{
+				width:30/@bs;
+				height: 30/@bs;
+				position: absolute;
+				left:100/@bs;
+				top:30/@bs;
+				background: url("../images/icon_search.png") no-repeat center;
+				background-size: 27/@bs 28/@bs;
+			}
+			input{
+				width: 100%;
+				height: 60/@bs;
+				margin-top: 15/@bs;
+				border:none;
+				background: rgba(255,255,255,0.6);
+				border-radius: 8/@bs;
+				font-size: 24/@bs;
+				outline: none;
+				padding-left: 50/@bs;
+			}
+		}
+	}
+	//轮播图
+	.sn_banner{
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		ul{
+			list-style: none;
+			transform:translateX(-100%/10);
+			-webkit-transform:translateX(-100%/10);
+			&:first-child{
+				width: 10*100%;
+				li{
+					width: 100%/10;
+					float: left;
+					a{
+						display: block;
+						width: 100%;
+						img{
 							display: block;
 							width: 100%;
-							img{
-								display: block;
-								width: 100%;
-							}
-						}
-					}
-				}
-				&:last-child{
-					position: absolute;
-					right: 20/@bs;
-					bottom: 20/@bs;
-					li{
-						width: 12/@bs;
-						height: 12/@bs;
-						border-radius: 50%;
-						background-color:#fff;
-						float: left;
-						margin-left: 12/@bs;
-						&.now{
-							background-color: @snColor;
 						}
 					}
 				}
 			}
+			&:last-child{
+				position: absolute;
+				right: 20/@bs;
+				bottom: 20/@bs;
+				li{
+					width: 12/@bs;
+					height: 12/@bs;
+					border-radius: 50%;
+					background-color:#fff;
+					float: left;
+					margin-left: 12/@bs;
+					&.now{
+						background-color: @snColor;
+					}
+				}
+			}
 		}
+	}
+	//导航
+	.sn_nav{
+		width: 100%;
+		ul{
+			list-style: none;
+			width: 100%;
+			padding: 20/@bs 0;
+			li{
+				width: 20%;
+				float: left;
+				a{
+					display: block;
+					width: 100%;
+					text-decoration: none;
+					img{
+						display: block;
+						width: 120/@bs;
+						height: 120/@bs;
+						margin:0 auto;
+					}
+					p{
+						font-size: 24/@bs;
+						margin:12/@bs 0;
+						text-align: center;
+						color:#666;
+					}	
+				}
+			}
+		}
+	}
+	//底部页签
+	.sn_tabs{
+		width: 100%;
+		height: 90/@bs;
+		background-color: #fff;
+		border-top: 1px solid #ccc;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		ul{
+			list-style: none;
+			width: 100%;
+			li{
+				width: 20%;
+				float: left;
+				text-align: center;
+				a{
+					text-decoration: none;
+					color:#666;
+					span{
+						font-size: 40/@bs;
+						margin-top: 10/@bs;
+					}
+					p{
+						font-size: 20/@bs;
+					}
+				}
+			}
+		}
+	}

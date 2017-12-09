@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title></title>
+	<link rel="stylesheet" href="assets/swiper/swiper-3.4.2.min.css">
 	<link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet/less" type="text/css" href="less/main.less"/>
 	<script src="assets/less/less.min.js"></script>
@@ -20,21 +21,29 @@
 			</form>
 			<a href="#" class="icon_gift"></a>
 		</header>
+		<!-- 轮播图css -->
+		<style>
+			.swiper-container ul{
+				list-style: none;
+			}
+			.swiper-container img{
+				display: block;
+				width: 100%;
+			}
+		</style>
 		<!-- 轮播图 -->
-		<div class="sn_banner">
-			<ul class="clearfix">
-				<li><a href="#"><img src="images/banner08.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner01.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner02.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner03.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner04.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner05.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner06.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner07.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner08.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/banner01.jpg" alt=""></a></li>
+		<div class="swiper-container">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide"><a href="#"><img src="images/banner01.jpg" alt=""></a></li>
+				<li class="swiper-slide"><a href="#"><img src="images/banner02.jpg" alt=""></a></li>
+				<li class="swiper-slide"><a href="#"><img src="images/banner03.jpg" alt=""></a></li>
+				<li class="swiper-slide"><a href="#"><img src="images/banner04.jpg" alt=""></a></li>
+				<li class="swiper-slide"><a href="#"><img src="images/banner05.jpg" alt=""></a></li>
+				<li class="swiper-slide"><a href="#"><img src="images/banner06.jpg" alt=""></a></li>
+				<li class="swiper-slide"><a href="#"><img src="images/banner07.jpg" alt=""></a></li>
+				<li class="swiper-slide"><a href="#"><img src="images/banner08.jpg" alt=""></a></li>
 			</ul>
-			<ul>
+			<ul class="swiper-pagination">
 				<li class="now"></li>
 				<li></li>
 				<li></li>
@@ -139,6 +148,20 @@
 <script src="assets/zepto/selector.js"></script>
 <script src="assets/zepto/fx.js"></script>
 <script src="assets/zepto/touch.js"></script>
-<script src="js/index.js"></script>
+
+<!-- swiper -->
+<script src="assets/swiper/swiper-3.4.2.jquery.min.js"></script>
+<script>
+	// 初始化轮播图
+	$(function(){
+		new Swiper ('.swiper-container',{
+			autoplay:3000,
+			loop:true,
+			pagination:'.swiper-container .swiper-pagination',
+			disableOnInteraction: false,
+		 	},
+		);
+  	})        
+</script>
 </body>
 </html>
